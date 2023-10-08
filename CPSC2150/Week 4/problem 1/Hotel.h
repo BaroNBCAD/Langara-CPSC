@@ -1,3 +1,7 @@
+/*
+    cre: Danny Oct/7
+*/
+
 #ifndef HOTEL_H
 #define HOTEL_H
 #include <cmath>
