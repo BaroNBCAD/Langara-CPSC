@@ -1,3 +1,7 @@
+/*
+    cre: Danny Oct/7
+*/
+
 #include "Hotel.cpp"
 
 void displayMenu();
