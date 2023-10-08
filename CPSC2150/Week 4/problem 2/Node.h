@@ -1,3 +1,8 @@
+/*
+    cre: Danny Oct/7
+    Source: using code provided by Muntaseer
+*/
+
 #ifndef NODE_H
 #define NODE_H
 
