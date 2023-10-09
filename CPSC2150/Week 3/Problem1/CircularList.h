@@ -20,7 +20,16 @@ private:
 
 public:
     CircularLinkedList() : last(nullptr) {}
-
+    ~CircularLinkedList(){
+        if (last == nullptr)    return;
+        Node* head = last->next;
+        last->next = nullptr;
+        while (head != nullptr){
+            Node* temp = head->next;
+            delete head;
+            head=temp;
+        }
+    }
     // Check if the circular linked list is empty
     bool isEmpty() {
         return last == nullptr;
