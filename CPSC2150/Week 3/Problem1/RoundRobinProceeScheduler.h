@@ -76,8 +76,8 @@ public:
                         current->data = 0;
                         Results result = {current->id, timeElapsed};
                         results.push_back(result);
-                        processTimes.deleteNode(0);
                         current = current->next;
+                        processTimes.deleteNode(0);
                     }
                 }
                 else{
