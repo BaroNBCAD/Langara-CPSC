@@ -9,6 +9,10 @@ Hotel::Hotel(){
 }
 
 bool Hotel::CheckAvailability(int roomNumber){
+    if (roomNumber < 1 || roomNumber > 60){
+        cout << "INVALID ROOM NUMBER" << endl;
+        return false;
+    }
     unsigned long long room = pow(2, roomNumber);
     if ((rooms & room)==room)
         return false;
