@@ -16,7 +16,7 @@ bool PriorityQueue::isEmpty(){
 
 void PriorityQueue::Enqueue(){
     int data = rand()%100+1;
-    int priority = rand()%(skipList->MAXIMUM_ALLOWED_LEVEL_INDEX);
+    int priority = rand()%(skipList->MAXIMUM_ALLOWED_LEVEL_INDEX+1);
     skipList->InsertElement(data, priority);
     size++;
     return;
