@@ -40,6 +40,21 @@ public:
         }
     }
 
+    ~SkipList(){
+        while (head->next[0] != tail){
+            Node* toDel = head->next[0];
+            head->next[0] = toDel->next[0];
+
+            delete toDel;
+            toDel = nullptr;
+        }
+
+        delete head;
+        head = nullptr;
+        delete tail;
+        tail = nullptr;
+    }
+
     int RandomLevel(){
         float probablity = (float)rand()/RAND_MAX; // flip a coin
         int lvl = 0;
