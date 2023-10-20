@@ -11,13 +11,6 @@ using namespace std::chrono;
 const int string_length[] = {100, 4000, 16000};
 const int trials[] = {50, 150, 300};
 
-// auto beg = high_resolution_clock::now();
-// for (int i = 0; i < 50000; i++)
-//     continue;
-// auto end = high_resolution_clock::now();
-// auto duration = duration_cast<microseconds>(end - beg);
-// std::cout << "Elapsed Time: " << duration.count();
-
 string GenerateRandomString(int length){
     string result = "";
     for (int i =0; i < length; i++){
