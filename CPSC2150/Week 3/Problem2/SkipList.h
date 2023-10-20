@@ -41,6 +41,7 @@ public:
     }
 
     ~SkipList(){
+        // 1
         while (head->next[0] != tail){
             Node* toDel = head->next[0];
             head->next[0] = toDel->next[0];
@@ -53,6 +54,9 @@ public:
         head = nullptr;
         delete tail;
         tail = nullptr;
+
+        // Or, 2
+        // Deallocate singly linked list for the level 0.
     }
 
     int RandomLevel(){
