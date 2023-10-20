@@ -196,23 +196,23 @@ void MergeInOrder(int* left, int lSize, int* right, int rSize) {
 
 int main(){
     srand(time(0));
-    const int size = 7;
-    // Point* points = new Point[size];
-    // Fill(points, size);
-    // Display(points, size);
-    // cout << "---" << endl;
-    // MergeSort(points, size);
-    // Display(points, size);
-    // cout << "---" << endl;
-    // Shuffle(points, size);
-    // Display(points, size);
-    // cout << "---" << endl;
-    // Point* quickSortTest = QuickSort(points, size);
-    // Display(quickSortTest, size);
-    // cout << "---" << endl;
-    // delete points;
-    // if (quickSortTest != nullptr)
-    //     delete quickSortTest;
+    const int size = 25;
+    Point* points = new Point[size];
+    Fill(points, size);
+    Display(points, size);
+    cout << "---" << endl;
+    MergeSort(points, size);
+    Display(points, size);
+    cout << "---" << endl;
+    Shuffle(points, size);
+    Display(points, size);
+    cout << "---" << endl;
+    Point* quickSortTest = QuickSort(points, size);
+    Display(quickSortTest, size);
+    cout << "---" << endl;
+    delete points;
+    if (quickSortTest != nullptr)
+        delete quickSortTest;
 
     //////////////////////////////////
 
