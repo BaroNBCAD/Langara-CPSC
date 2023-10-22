@@ -64,6 +64,9 @@ void testOne(){
 }
 
 bool testTwo_function(string given_string){
+
+    /*
+    //Using MergeSort
     string sorted_string = MergeSort(given_string);
     for (int i = 0; i < given_string.length()-1; i++){
         // should be char to_look_for = given_string[i];
@@ -73,6 +76,27 @@ bool testTwo_function(string given_string){
             return true;
     }
     return false;
+
+    */
+
+    //Using SKipList:
+    SkipList sorted_string(2);
+
+    //O(nlogn)
+    for (int i = 0; i < given_string.length()-1; i++){
+        sorted_string.InsertElement(given_string[i]);
+    }
+
+    //O(nlogn)
+    for (int i = 0; i < given_string.length()-1; i++){
+        // should be char to_look_for = given_string[i];
+        // However, I want to test the worst case.
+        char to_look_for = 'A';
+        if (sorted_string.Search(given_string[i]))
+            return true;
+    }
+    return false;
+
 }
 
 void testTwo(){
