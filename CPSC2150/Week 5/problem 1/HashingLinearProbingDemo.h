@@ -184,7 +184,8 @@ public:
         cout << "-----------------" << endl;
         cout << "Current table size: " << hashTableSize << endl;
         cout << "Number of Keys: " << numberOfKeys << endl;
-        cout << "Current Load Factor: " << loadFactorThreshold << endl;
+        cout << "Current Load Factor: " << (numberOfKeys*1.0)/hashTableSize << endl;
+        cout << "Given Load Factor: " << loadFactorThreshold << endl;
         return;
     }
 
