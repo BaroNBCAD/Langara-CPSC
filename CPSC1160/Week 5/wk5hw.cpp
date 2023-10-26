@@ -93,7 +93,7 @@ void Shuffle(Point* p, int n){
 
 // 4
 
-int PlacePivot(Point*& p, int len) {
+int PlacePivot(Point* p, int len) {
     int pivot, low, high;
 
     pivot = 0;
@@ -120,30 +120,25 @@ int PlacePivot(Point*& p, int len) {
     return high;
 }
 
-void QuickSortHelper(Point*& p, int size){
-    if (size < 2)
+void QuickSortHelper(Point* p, int size){
+    if(size == 0) {
         return;
+    }
+    else if(size == 1) {
+        return;
+    }
+    else if(size == 2) {
+        if(p[0].y > p[1].y) {
+            Point temp = p[0];
+            p[0] = p[1];
+            p[1] = temp;
+        }
+        return;
+    }
 
     int pivot = PlacePivot(p, size);
-    Point* left = new Point[pivot];
-    for (int i =0; i < pivot; i++){
-        left[i] = p[i];
-    }
- 
-    Point* right = new Point[size - pivot - 1];
-    for (int i =0; i < size-pivot-1; i++){
-        right[i] = p[i+pivot+1];
-    }
-    QuickSortHelper(left, pivot);
-    QuickSortHelper(right, size - pivot-1);
-    for (int i =0; i < pivot; i++){
-        p[i] = left[i];
-    }
-    for (int i =0; i < size-pivot-1; i++){
-        p[i+pivot+1] = right[i];
-    }
-    delete left;
-    delete right;
+    QuickSortHelper(p, pivot);
+    QuickSortHelper(p + pivot + 1, size - pivot - 1);
 }
 
 
@@ -196,29 +191,34 @@ void MergeInOrder(int* left, int lSize, int* right, int rSize) {
 
 int main(){
     srand(time(0));
-    const int size = 25;
-    Point* points = new Point[size];
-    Fill(points, size);
-    Display(points, size);
-    cout << "---" << endl;
-    MergeSort(points, size);
-    Display(points, size);
-    cout << "---" << endl;
-    Shuffle(points, size);
-    Display(points, size);
-    cout << "---" << endl;
-    Point* quickSortTest = QuickSort(points, size);
-    Display(quickSortTest, size);
-    cout << "---" << endl;
-    delete points;
-    if (quickSortTest != nullptr)
-        delete quickSortTest;
+    const int size = 7;
+    // Point* points = new Point[size];
+    // Fill(points, size);
+    // Display(points, size);
+    // cout << "---" << endl;
+
+    // MergeSort(points, size);
+    // Display(points, size);
+    // cout << "---" << endl;
+
+    // Shuffle(points, size);
+    // Display(points, size);
+    // cout << "---" << endl;
+
+    // Point* quickSortTest = QuickSort(points, size);
+    // Display(points, size);
+    // Display(quickSortTest, size);
+    // cout << "---" << endl;
+
+    // delete points;
+    // if (quickSortTest != nullptr)
+    //     delete quickSortTest;
 
     //////////////////////////////////
 
-    int arr[] = {2,3,5,1,3,4,7};
-    display(arr, 7);
-    MergeInOrder(arr, 3, arr+3, 4);
-    display(arr, 7);
+    // int arr[] = {2,3,5,1,3,4,7};
+    // display(arr, 7);
+    // MergeInOrder(arr, 3, arr+3, 4);
+    // display(arr, 7);
     return 0;
 }
