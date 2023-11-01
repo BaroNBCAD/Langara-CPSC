@@ -22,8 +22,8 @@ vector<int> Primes(int n) {
                 return result;
             }
 
-            for (int counter = 0; i*i + counter*i < limit; counter++){
-                nums[i*i + counter*i] = true;
+            for (int j = i*i; j < limit; j+=i){
+                nums[j] = true;
             }
         }
     }
