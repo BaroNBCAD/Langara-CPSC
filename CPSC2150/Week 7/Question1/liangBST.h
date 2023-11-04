@@ -504,6 +504,7 @@ public:
   }
 
   TreeNode* ClosestCommonAncestor(TreeNode* node1, TreeNode* node2){
+    // BAD COMPLEXITY //
     vector<TreeNode*>* path1 = this->path(node1->element);
     vector<TreeNode*>* path2 = this->path(node2->element);
 
