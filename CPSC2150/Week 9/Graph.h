@@ -1,6 +1,6 @@
 /*
     Danny
-    - roughly made -
+    - roughly done -
     You all are welcome to look for bugs.
     It would help me and others!!
     Thank you.
