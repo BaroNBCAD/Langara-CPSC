@@ -296,7 +296,7 @@ public:
     }
 
     //////////////////////////////
-    LinkedList(LinkedList& rhs)
+    LinkedList(const LinkedList& rhs)
     {
         head = tail = nullptr;
         Node* tempRhsHead = rhs.head;
@@ -354,32 +354,23 @@ public:
 
         LinkedList* result = new LinkedList[n+1];
 
-        Node* temp = head;
-        Node* tempHead = head;
-        int index = 0;
-        int count = 0;
-        while (temp != nullptr && index < n){
-            if (count == splitIndices[index]){
-                result[index].head = tempHead;
-                result[index].tail = temp;
-                Node* tempNext = temp->next;
-                result[index].tail->next = nullptr;
-                temp = tempNext;
-                tempHead = temp;
-                index++;
+        Node *temp = head;
+        int j = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (; j <= splitIndices[i]; j++)
+            {
+                result[i].AddNodeLast(temp->data);
+                temp = temp->next;
             }
-            else{
-                temp=temp->next;
-            }
-            count++;
         }
 
-        if (temp != nullptr){
-            result[index].head = tempHead;
+        while (temp != nullptr)
+        {
+            result[n].AddNodeLast(temp->data);
+            temp = temp->next;
         }
-        //Since the new LinkedList objects are taking the original list, our list now is empty
-        this->head=nullptr;
-        this->tail=nullptr;
+
         return result;
     }
 
@@ -441,7 +432,7 @@ public:
     */
 
     // Assignment operator
-    LinkedList& operator=(LinkedList& rhs){
+    LinkedList& operator=(const LinkedList& rhs){
         if (this != &rhs){
             Clear();
             Node* tempRhsHead = rhs.head;
@@ -471,13 +462,13 @@ public:
     }
 
     // operator+=
-    void operator+=(LinkedList& rhs){
+    LinkedList& operator+=(LinkedList& rhs){
         Node* tempRhs = rhs.head;
         while (tempRhs){
             AddNodeLast(tempRhs->data);
             tempRhs=tempRhs->next;
         }
-        return;
+        return *this;
     }
 
     //operator-
