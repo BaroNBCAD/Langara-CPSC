@@ -1,8 +1,12 @@
 a.
 The algorithm is mostly the same EXCEPT the use of closestNeighbor/closestDistance.
 
-1.
-closestNeighbor and closestDistance variables are the issues. Let's use the given maze as an example:
+1. Main issue
+While DijkStra's algorithm uses the PriorityQueue, where it finds the smallest distance from ALL THE REMAINING VERTICES,
+the algorithm in class only finds the smallest distance from the ADJACENT VERTICES.
+
+2. Minor issue regarding closestNeighbor and closestDistance:
+Let's use the given maze as an example:
 {1,1,1,1},
 {0,1,0,1},
 {0,1,0,1},
@@ -10,9 +14,6 @@ closestNeighbor and closestDistance variables are the issues. Let's use the give
 
 When we track to vertex 1, vertex 2 and 5 both have the distance of 2.
 The DFS() given function will always take the vertex 5 as the closestNeighbor, and 2 as the closestDistance whenever the DFS() function runs.
-
-2. While DijkStra's algorithm uses the PriorityQueue, where it finds the smallest distance from ALL THE REMAINING VERTICES,
-the algorithm in class only finds the smallest distance from the ADJACENT VERTICES.
 
 b.
 There should be an array, a vector, or any type of data structure (PriorityQueue, etc.) to store the closest distance of ALL vertices.
