@@ -173,12 +173,14 @@ public:
         cout << endl;
     }
 
-    int lookForClosest(vector<bool> &visited, vector<int> &dist, int index){
-        int minIndex = index;
+    int lookForClosest(vector<bool> &visited, vector<int> &dist){
+        int minValue = INT_MAX;
+        int minIndex = -1;
         for (int i = 0; i < dist.size(); i++){
             // test if it's a vertex // test if visited // test if min
-            if (vertices[i].isPath && !visited[i] && dist[i] < dist[minIndex]){
+            if (vertices[i].isPath && !visited[i] && dist[i] < minValue){
                 minIndex = i;
+                minValue = dist[i];
             }
         }
         return minIndex;
@@ -191,6 +193,7 @@ public:
 
         if (v1 == v2)
         {
+            visited[v2] = true;
             return;
         }
 
@@ -201,12 +204,15 @@ public:
             if (!visited[adjacencyList[v1][i]])
             {
                 dist[adjacencyList[v1][i]] = dist[v1] + 1;
-                closestNeighbor = lookForClosest(visited, dist, adjacencyList[v1][i]);
+                if (adjacencyList[v1][i] == v2){
+                    visited[v2] = true;
+                    return;
+                }
             }
-            if (closestNeighbor != -1)
-                DFS(closestNeighbor, v2, visited, dist);
         }
-        
+        closestNeighbor = lookForClosest(visited, dist);
+        if (closestNeighbor != -1)
+            DFS(closestNeighbor, v2, visited, dist);        
     }
 
     void SolveMazeDijkstra(int startRow, int startCol, int endRow, int endCol)
