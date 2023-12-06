@@ -5,7 +5,7 @@ the algorithm in class only finds the smallest distance from the ADJACENT VERTIC
 
 b.
 
-It depends on how you would like your maze to be; other than that, the data structure is fine.
+
 
 c.
 1.
