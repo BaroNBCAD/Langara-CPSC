@@ -40,6 +40,6 @@ if (visited[v2]){
 Unless you want to look for multiple paths (I don't see why you'd like to do so in finding the shortest path function), it's better to set visited[v2] = true;
 (Might be a good idea to return the DFS() early in case we've found v2 when updating the distance of vertices)
 
-d. Not really.
+d. Any other reason: Not really.
 
 I upload my code in this Week 12 folder. Please check it out.
