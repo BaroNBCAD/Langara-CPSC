@@ -12,8 +12,8 @@ Let's use the given maze as an example:
 {0,1,0,1},
 {0,1,1,1}
 
-When we track to vertex 1, vertex 2 and 5 both have the distance of 2.
-The DFS() given function will always take the vertex 5 as the closestNeighbor, and 2 as the closestDistance whenever the DFS() function runs.
+When we track to vertex 1, we'll have vertex 2 and 5 both store the distance of 2.
+The given DFS() function will always take the vertex 5 as the closestNeighbor, and 2 as the closestDistance whenever the DFS() function runs.
 
 b.
 There should be an array, a vector, or any type of data structure (PriorityQueue, etc.) to store the closest distance of ALL vertices.
@@ -37,7 +37,7 @@ if (visited[v2]){
     return;
   }
 */
-Unless you want to look for multiple paths (I don't see why you'd like to do so in the finding the shortest path function), it's better to set visited[v2] = true;
+Unless you want to look for multiple paths (I don't see why you'd like to do so in finding the shortest path function), it's better to set visited[v2] = true;
 (Might be a good idea to return the DFS() early in case we've found v2 when updating the distance of vertices)
 
 d. Not really.
