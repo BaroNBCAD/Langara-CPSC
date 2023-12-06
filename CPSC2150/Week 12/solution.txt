@@ -1,0 +1,29 @@
+a.
+The algorithm is mostly the same EXCEPT the use of closestNeighbor/closestDistance.
+While DijkStra's algorithm uses the PriorityQueue, where it finds the smallest distance from ALL THE REMAINING VERTICES,
+the algorithm in class only finds the smallest distance from the ADJACENT VERTICES.
+
+b.
+
+It depends on how you would like your maze to be; other than that, the data structure is fine.
+
+c.
+1.
+/*
+if (visited[v2]){
+  return;
+}
+*/
+- Even if the visited[v2] is false, the function still does the "return" -> That's why it takes no effect.
+
++ closestNeighbor and closestDistance variables are the issues. Let's use the given maze as an example:
+{1,1,1,1},
+{0,1,0,1},
+{0,1,0,1},
+{0,1,1,1}
+
+When we track to vertex 1, vertex 2 and 5 both have the distance of 2.
+The DFS() given function will always take the vertex 5 as the closestNeighbor, and 2 as the closestDistance whenever the DFS() function runs.
+To fix it, it's fairly simple.
+After the forLoop is done with vertex 5, 
+
