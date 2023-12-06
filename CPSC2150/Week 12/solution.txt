@@ -16,8 +16,8 @@ the algorithm in class only finds the smallest distance from the ADJACENT VERTIC
 
 b.
 There should be an array, a vector, or any type of data structure (PriorityQueue, etc.) to store the closest distance of ALL vertices.
-
 We can also use the vector<int> dist that we have, but need to handle it properly.
+I added a function [int lookForClosest(vector<bool> &visited, vector<int> &dist, int index)] where it looks for the closest vertex. It's an O(n) version of PriorityQueue.
 
 c.
 1.
@@ -28,8 +28,10 @@ if (visited[v2]){
 */
 - Even if the visited[v2] is false, the function still does the "return" -> That's why it takes no effect.
 
-2. closestNeighbor and closestDistance
+2. closestNeighbor and closestDistance need to be well handled.
 
-d. 
+d. Not really.
+
+I upload my code in this Week 12 folder. Please check it out.
 
 
