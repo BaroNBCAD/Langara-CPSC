@@ -30,6 +30,15 @@ if (visited[v2]){
 
 2. closestNeighbor and closestDistance need to be well handled.
 
+3. 
+/*
+  if (v1 == v2){
+    return;
+  }
+*/
+Unless you want to look for multiple paths (I don't see why you'd like to do so in the finding the shortest path function), it's better to set visited[v2] = true;
+(Might be a good idea to return the DFS() early in case we've found v2 when updating the distance of vertices)
+
 d. Not really.
 
 I upload my code in this Week 12 folder. Please check it out.
