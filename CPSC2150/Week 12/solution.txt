@@ -15,7 +15,9 @@ The DFS() given function will always take the vertex 5 as the closestNeighbor, a
 the algorithm in class only finds the smallest distance from the ADJACENT VERTICES.
 
 b.
-There must be an array, a vector, or any type of data structure (PriorityQueue, etc.) to store the closest distance of ALL vertices.
+There should be an array, a vector, or any type of data structure (PriorityQueue, etc.) to store the closest distance of ALL vertices.
+
+We can also use the vector<int> dist that we have, but need to handle it properly.
 
 c.
 1.
