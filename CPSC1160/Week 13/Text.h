@@ -404,6 +404,7 @@ public:
             while (wordTemp){
                 if (*wordTemp == oldWord)
                     *wordTemp = *newWordNode;
+                    //*wordTemp = newWord;    //This also works, altho I'm not sure how.
                 wordTemp = wordTemp->next;
             }
             sentenceTemp = sentenceTemp->next;
