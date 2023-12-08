@@ -289,6 +289,9 @@ public:
      * @param  txt string to search for
      * @return true if string in txt appears anywhere within the text object (not just as a whole word); otherwise retuns false.
      */
+    /*
+        The reason I implemented it like this is because [txt] is a string, not a word. ie [txt] could be "a. Thi"
+    */
     bool SearchAnywhere(string txt){
         string result = "";
         SentenceNode* sentenceTemp = firstSentence;
@@ -363,6 +366,9 @@ public:
      * @param  word string to search and count
      * @return number of times the specified word appears anywhere within the text object (not just as a whole word)
      */
+    /*
+        This function performs differently from SearchAnyWhere because [word] here IS a word, not just a random string.
+    */
     int CountAnywhere(string word){
         SentenceNode* sentenceTemp = firstSentence;
         string wordInString = "";
@@ -411,6 +417,10 @@ public:
      * @param  oldText string to search for and replace
      * @param  newText string to replace oldText with
      */
+
+    /*
+        Same implementation as SearchAnyWhere
+    */
     void ReplaceAnywhere(string oldText, string newText){
         string result = "";
         SentenceNode* sentenceTemp = firstSentence;
